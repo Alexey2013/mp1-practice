@@ -7,13 +7,17 @@
 #include "merge.h"
 #include "qsort.h"
 #include "choice_min.h"
-#define N 10
+#define N 100
 
 struct _file
 {
 	char name[20];
 	int size;
 };
+
+WIN32_FIND_DATA names[N];
+WIN32_FIND_DATA File;
+HANDLE hfile;
 
 int main() {
 	LARGE_INTEGER clockFrequency;
