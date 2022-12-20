@@ -1,30 +1,40 @@
 #include "qsort.h"
 
-struct _file
+struct file
 {
 	char name[20];
 	int size;
 };
 
 
-void qsort(struct _file** m, int size_of_m, int start) {
-	int i = start;
-	int j = size_of_m;
-	int mid;
-	struct _file tmp;
-	mid = (*m)[(start + size_of_m) / 2].size;
-	do {
-		while ((*m)[i].size < mid) { i++; }
-		while ((*m)[j].size >= mid) { j--; }
-		if (i <= j) {
-			tmp.size = (*m)[i].size;
-			(*m)[i].size = (*m)[j].size;
-			(*m)[j].size = tmp.size;
-			i++;
-			j--;
-		}
-	} while (i < j);
-	if (size_of_m == 2) return;
-	if (j > 0) { qsort(m, j, 0); }
-	if (i < size_of_m - 1) { qsort(m, size_of_m, i + 1); }
+void qsort(struct file* files, int size) {
+    int i = 0;
+    int j = size - 1;
+    struct file tmp;
+    int mid = files[size / 2].size;
+    do {
+        while (files[i].size < mid) {
+            i++;
+        }
+
+        while (files[j].size > mid) {
+            j--;
+        }
+
+        if (i <= j) {
+            tmp = files[i];
+            files[i] = files[j];
+            files[j] = tmp;
+
+            i++;
+            j--;
+        }
+    } while (i <= j);
+
+    if (j > 0) {
+        qsort(files, j + 1);
+    }
+    if (i < size) {
+        qsort(&files[i], size - i);
+    }
 }
