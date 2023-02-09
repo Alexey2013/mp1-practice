@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "matrix.h"
+#define N 4 
 
 int main() {
 	int i = 0;
 	int j = 0;
 	Tmatrix* m1, * m2, *res;
-	alloc_matrix(&m1, 4,4);
-	alloc_matrix(&m2, 4, 4);
+	alloc_matrix(&m1, N,N);
+	alloc_matrix(&m2, N, n);
 	fill_matrix(m1);
 	fill_matrix(m2);
 	printf("Result of sum of matrices with each other");
