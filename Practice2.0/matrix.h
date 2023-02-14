@@ -3,8 +3,8 @@
 
 typedef struct
 {
-    size_t n,m;
-    int ** x;
+    int n;
+    float * x;
 } Tmatrix;
 
 void alloc_matrix(Tmatrix** matrix, int n);
@@ -15,4 +15,5 @@ Tmatrix* add_matrix(Tmatrix* m1, Tmatrix* m2);
 Tmatrix* add_number(Tmatrix* matrix, double c);
 Tmatrix* multi_matrix(Tmatrix* m1, Tmatrix* m2);
 Tmatrix* multi_number(Tmatrix* matrix, double c);
+
 #endif // !_MATRIX_H
