@@ -15,6 +15,7 @@ int main() {
 	fill_matrix(m2);
 	printf("Introduced matrices:\n");
 	print_matrix(m1);
+	printf("\n");
 	print_matrix(m2);
 	printf("Result of sum of matrices with each other\n");
 	res = add_matrix(m1, m2);
