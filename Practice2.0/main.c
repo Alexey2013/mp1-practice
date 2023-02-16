@@ -34,4 +34,7 @@ int main() {
 	print_matrix(res);
 	free_matrix(&res);
 	return 0;
+	print_matrix(res);
+	free_matrix(&res);
+	return 0;
 }
