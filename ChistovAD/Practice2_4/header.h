@@ -6,29 +6,44 @@ using namespace std;
 template <typename T>
 class Container {
 private:
-	elements *elements;
+	T *elements;
 	int max_size;
 	int size:
 	int step;
 	int pas;
 public:
 	Container(int max_size, int step);
+	~Container();
+	void Add(T _elements);
+	void Del(T _elements);
+
 };
 
-class Receipt {
-private:
-	long index;
-	TDate* date;
-	TTime* time;
-	TContainer* products;
+class Product : public Recipline
+{
 public:
+	long code;
+	string name;
+	double cost;
 };
 
-class Recipline {
+string get_path();
+
+class Receipt : public Container
+{
 public:
-	int num;
+	float number;
+	Date date;
+	Time time;
+	Container products;
+};
+
+class ReceiptLine : public Container
+{
+public:
+	int count; 
 	double sum;
-	TProduct* product;
+	Product* product;
 };
 
 class Date {
