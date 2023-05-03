@@ -12,11 +12,11 @@ private:
 	int step;
 	int pas;
 public:
-	Container(int max_size, int step);
+	Container(int max_size, int step, const string& path);
 	~Container();
+	int amount(const string& path);
 	void Add(T _elements);
 	void Del(T _elements);
-
 };
 
 class Product : public Recipline
@@ -60,3 +60,4 @@ public:
 	int second;
 };
 #endif 
+
