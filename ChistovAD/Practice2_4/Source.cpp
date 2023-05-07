@@ -38,6 +38,48 @@ int Container::amount(const string& path)
 	return count;
 }
 
+//labor::labor(const string& path) {
+//	this->n = amount(path);
+//	this->w = new worker[n];
+//	fstream file;
+//	string   id, profession, education, last_job, rsn_dismiss, family_status;
+//	int  contact_info;
+//	file.open(path);
+//	int i = 0, j = 0;
+//	string line, s;
+//	ifstream in(path);
+//	while (getline(in, line))
+//	{
+//		if (line == "\0") {
+//			continue;
+//		}
+//		stringstream ss(line);
+//		while (getline(ss, s, ';')) {
+//			switch (i) {
+//			case 0:
+//				barcode = s;
+//				break;
+//			case 1:
+//				name = s;
+//				break;
+//			case 2:
+//				price = s;
+//				break;
+//			case 3:
+//				count = s;
+//				w[j].adding(id, profession, education, last_job, rsn_dismiss, family_status, contact_info);
+//				j++;
+//				i = -1;
+//				break;
+//			}
+//			i++;
+//		}
+//	}
+//	in.close();
+//}
+
+
+
 void menu() {
 	cout << "MENU:" << endl;
 	cout << "1.Scan a product" << endl;
@@ -73,3 +115,4 @@ TContainer::TContainer(int max_size, int step,const string& path) {
 
 
 }
+
