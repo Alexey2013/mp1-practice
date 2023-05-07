@@ -1,4 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <ctime>
 #include <string>
 #include "Header.h"
 using namespace std;
@@ -59,6 +61,11 @@ void menu() {
 	}
 }
 
+void time (){
+	time_t now = time(0);
+	char* dt = ctime(&now);
+	cout << "The local date and time is: " << dt << endl;
+}
 TContainer::TContainer(int max_size, int step,const string& path) {
 	this->max_size = amount(path);
 	this->step = step;
